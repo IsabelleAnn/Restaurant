@@ -1,0 +1,57 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+}
+
+header {}
+
+nav {
+    height: 10vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: orange;
+}
+
+.navlink {
+    border: solid 1px black;
+    margin: 20px;
+    padding: 10px;
+    cursor: pointer;
+}
+
+#content {
+    height: 85vh;
+    background-color: purple;
+}
+
+footer {
+    height: 5vh;
+    background-color: orange;
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+footer a {
+    color: purple;
+    text-decoration: none;
+}
+
+footer a:visited {
+    color: purple;
+}
+
+footer a:active {
+    color: purple;
+}
+
+footer a:hover {
+    color: black;
+}

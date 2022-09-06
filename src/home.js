@@ -1,13 +1,15 @@
-export function loadHomePage(container) {
+export function loadHomePage(container, homeContainer) {
+
+    container.appendChild(homeContainer);
     const title = document.createElement('h1');
     title.textContent = 'Alamo';
-    container.appendChild(title);
+    homeContainer.appendChild(title);
 
     const heading = document.createElement('h3');
     heading.textContent = 'Tex-Mex Restaurant';
-    container.appendChild(heading);
+    homeContainer.appendChild(heading);
 
     const logo = document.createElement('img');
     logo.src = '/src/images/logo.png';
-    container.appendChild(logo);
+    homeContainer.appendChild(logo);
 }
