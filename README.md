@@ -1,2 +1,23 @@
-# Restaurant
-Restaurant Page
+# Restaurant Page - Work In Progress
+
+Part of The Odin Project Curriculum
+
+:point_right:[Live Demo](https://isabelleann.github.io/TICTACTOE/)
+
+## Built With:
+  * JavaScript
+
+  * HTML
+
+  * CSS
+  
+## Tools:
+  * Visual Studio Code
+  
+  * Ubuntu Linux on VirtualBox
+  
+  * git + Github
+  
+  * Webpack
+
+## Features:
