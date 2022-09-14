@@ -8,12 +8,16 @@
     box-sizing: border-box;
 }
 
+
+/* MOVE FONT FOLDER TO DIST */
+
 body {
     height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
     font-family: 'flairnormal', sans-serif;
+    font-size: 1rem;
     color: var(--font-color);
     background: url('images/Alamo-Web-Background-with-flowers.png'), url('images/Alamo-Logo-Web-Header.png');
     background-position: top, center;
@@ -51,24 +55,93 @@ div.nav {
     margin: 20px;
     cursor: pointer;
     font-weight: bold;
-    font-size: larger;
+    font-size: 1.3rem;
+}
+
+.navlink:hover {
+    color: #be3934;
 }
 
 #content {
-    /* flex: 1;
-    overflow: auto; */
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    flex: 1;
+    overflow: auto;
     text-align: center;
     background-color: white;
     width: 70vw;
     box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.267);
 }
 
-.home-container {}
+.home-container {
+    background-image: url('images/tacos.png');
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.home-text {
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.74);
+    font-size: 4rem;
+    color: white;
+}
+
+.list-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    align-items: center;
+    justify-content: center;
+    text-align: left;
+    padding: 50px;
+    gap: 50px;
+}
+
+.item-container {
+    display: flex;
+    justify-content: space-around;
+}
+
+.details-container {
+    width: 50%;
+    align-self: center;
+}
+
+.name-price-container {
+    border-bottom: 3px #be3934 dotted;
+    display: flex;
+    justify-content: space-between;
+}
+
+.menu-container {
+    background-image: url('images/alamo-illustration.png');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: top;
+    background-size: 71% auto;
+}
+
+.contact-container {
+    background-image: url('images/contact-background.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: top;
+    background-size: 71%;
+    height: 100%;
+    color: white;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.74);
+}
+
+.item-image {
+    width: 150px;
+    height: 150px;
+    object-position: center;
+    object-fit: cover;
+    border-top: solid #e6db5f 5px;
+    border-bottom: solid #e6db5f 5px;
+}
 
 .home-container,
 .menu-container,
