@@ -1,4 +1,4 @@
-# Restaurant Page - Work In Progress
+# Restaurant Page
 
 Part of The Odin Project Curriculum
 
@@ -19,5 +19,3 @@ Part of The Odin Project Curriculum
   * git + Github
   
   * Webpack
-
-## Features:
