@@ -4,21 +4,17 @@ import { loadContactPage } from './contact.js';
 
 const content = document.getElementById('content');
 
-const createHeader = function createHeader() {
+function createNav() {
     const header = document.querySelector('header');
     const headerImg = document.createElement('img');
     headerImg.src = 'images/Alamo-Logo-Web-Header.png';
     headerImg.classList.add('header-img');
     header.appendChild(headerImg);
-    return header;
-}
-
-const createNavbar = (function() {
 
     const nav = document.createElement('div');
     nav.classList.add('nav');
 
-    createHeader().appendChild(nav);
+    header.appendChild(nav);
 
     const homeBtn = document.createElement('div');
     homeBtn.setAttribute('id', 'home');
@@ -39,22 +35,25 @@ const createNavbar = (function() {
     menuBtn.addEventListener('click', toggleActiveContent);
     contactBtn.addEventListener('click', toggleActiveContent);
 
-    function toggleActiveContent(e) {
-        const buttons = document.querySelectorAll('.navlink');
-        buttons.forEach((button) => {
-            if (button.id !== e.target.id) {
-                document.querySelector(`.${button.id}-container`).classList.add('hidden');
-            } else {
-                document.querySelector(`.${button.id}-container`).classList.remove('hidden');
-            }
-        });
-    }
-
     nav.appendChild(homeBtn);
     nav.appendChild(menuBtn);
     nav.appendChild(contactBtn);
-})();
+}
 
-loadHomePage(content);
-loadMenuPage(content);
-loadContactPage(content);
+function toggleActiveContent(e) {
+    const buttons = document.querySelectorAll('.navlink');
+    buttons.forEach((button) => {
+        if (button.id !== e.target.id) {
+            document.querySelector(`.${button.id}-container`).classList.add('hidden');
+        } else {
+            document.querySelector(`.${button.id}-container`).classList.remove('hidden');
+        }
+    });
+}
+
+createNav();
+loadHomePage();
+loadMenuPage();
+loadContactPage();
+
+export { content };

@@ -1,4 +1,6 @@
-export function loadHomePage(content) {
+import { content } from './index.js';
+
+export function loadHomePage() {
 
     const homeContainer = document.createElement('div');
     homeContainer.classList.add('home-container');

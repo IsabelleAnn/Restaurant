@@ -1,4 +1,6 @@
-export function loadContactPage(content) {
+import { content } from './index.js';
+
+export function loadContactPage() {
 
     const contactContainer = document.createElement('div');
     contactContainer.classList.add('contact-container');
