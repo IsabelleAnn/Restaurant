@@ -1,4 +1,8 @@
-export function loadHomePage(container, homeContainer) {
+export function loadHomePage(content) {
+
+    const homeContainer = document.createElement('div');
+    homeContainer.classList.add('home-container');
+    content.appendChild(homeContainer);
 
     const buttonL = document.createElement('img');
     buttonL.src = 'images/arrow.png';
@@ -36,7 +40,7 @@ export function loadHomePage(container, homeContainer) {
     slogan.classList.add('home-text');
 
     homeContainer.appendChild(buttonL);
-    container.appendChild(homeContainer);
+    content.appendChild(homeContainer);
     homeContainer.appendChild(slogan);
     homeContainer.appendChild(buttonR);
 }

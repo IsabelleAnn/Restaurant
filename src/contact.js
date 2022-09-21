@@ -1,4 +1,9 @@
-export function loadContactPage(container, contactContainer) {
+export function loadContactPage(content) {
+
+    const contactContainer = document.createElement('div');
+    contactContainer.classList.add('contact-container');
+    contactContainer.classList.add('hidden');
+
     const textContainer = document.createElement('div');
 
     const locationContainer = document.createElement('div');
@@ -30,7 +35,7 @@ export function loadContactPage(container, contactContainer) {
     hoursTitle.classList.add('page-title');
     contactTitle.classList.add('page-title');
 
-    container.appendChild(contactContainer);
+    content.appendChild(contactContainer);
     contactContainer.appendChild(textContainer);
     textContainer.appendChild(locationContainer);
     textContainer.appendChild(contactTextContainer);

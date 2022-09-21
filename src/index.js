@@ -2,67 +2,59 @@ import { loadHomePage } from './home.js';
 import { loadMenuPage } from './menu.js';
 import { loadContactPage } from './contact.js';
 
-const header = document.querySelector('header');
-const headerImg = document.createElement('img');
-headerImg.src = 'images/Alamo-Logo-Web-Header.png';
-headerImg.classList.add('header-img');
-header.appendChild(headerImg);
+const content = document.getElementById('content');
 
-const container = document.getElementById('content');
+const createHeader = function createHeader() {
+    const header = document.querySelector('header');
+    const headerImg = document.createElement('img');
+    headerImg.src = 'images/Alamo-Logo-Web-Header.png';
+    headerImg.classList.add('header-img');
+    header.appendChild(headerImg);
+    return header;
+}
 
-const homeContainer = document.createElement('div');
-homeContainer.classList.add('home-container');
-container.appendChild(homeContainer);
+const createNavbar = (function() {
 
-const menuContainer = document.createElement('div');
-menuContainer.classList.add('menu-container');
-menuContainer.classList.add('hidden');
+    const nav = document.createElement('div');
+    nav.classList.add('nav');
 
-const contactContainer = document.createElement('div');
-contactContainer.classList.add('contact-container');
-contactContainer.classList.add('hidden');
+    createHeader().appendChild(nav);
 
-const nav = document.createElement('div');
-nav.classList.add('nav');
-header.appendChild(nav);
-
-createNavbar();
-loadHomePage(container, homeContainer);
-loadMenuPage(container, menuContainer);
-loadContactPage(container, contactContainer);
-
-function createNavbar() {
     const homeBtn = document.createElement('div');
     homeBtn.setAttribute('id', 'home');
     homeBtn.setAttribute('class', 'navlink');
     homeBtn.textContent = "Home";
-    homeBtn.addEventListener('click', () => {
-        homeContainer.classList.remove('hidden');
-        menuContainer.classList.add('hidden');
-        contactContainer.classList.add('hidden');
-    });
 
     const menuBtn = document.createElement('div');
     menuBtn.setAttribute('id', 'menu');
     menuBtn.setAttribute('class', 'navlink');
     menuBtn.textContent = "Menu";
-    menuBtn.addEventListener('click', () => {
-        homeContainer.classList.add('hidden');
-        menuContainer.classList.remove('hidden');
-        contactContainer.classList.add('hidden');
-    });
 
     const contactBtn = document.createElement('div');
     contactBtn.setAttribute('id', 'contact');
     contactBtn.setAttribute('class', 'navlink');
     contactBtn.textContent = "Contact";
-    contactBtn.addEventListener('click', () => {
-        homeContainer.classList.add('hidden');
-        menuContainer.classList.add('hidden');
-        contactContainer.classList.remove('hidden');
-    });
+
+    homeBtn.addEventListener('click', toggleActiveContent);
+    menuBtn.addEventListener('click', toggleActiveContent);
+    contactBtn.addEventListener('click', toggleActiveContent);
+
+    function toggleActiveContent(e) {
+        const buttons = document.querySelectorAll('.navlink');
+        buttons.forEach((button) => {
+            if (button.id !== e.target.id) {
+                document.querySelector(`.${button.id}-container`).classList.add('hidden');
+            } else {
+                document.querySelector(`.${button.id}-container`).classList.remove('hidden');
+            }
+        });
+    }
 
     nav.appendChild(homeBtn);
     nav.appendChild(menuBtn);
     nav.appendChild(contactBtn);
-}
+})();
+
+loadHomePage(content);
+loadMenuPage(content);
+loadContactPage(content);
